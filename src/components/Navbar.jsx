@@ -26,7 +26,7 @@ export default function Navbar({ scrolled }) {
   const scrollToSection = (sectionId) => {
     const element = document.getElementById(sectionId);
     if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
+      element.scrollIntoView({ behavior: 'smooth', block: 'start' });
     }
     setMobileMenuIsOpen(false);
   };
@@ -79,16 +79,24 @@ export default function Navbar({ scrolled }) {
 
       {/* Mobile Navbar - Full Width with Rounded Corners */}
       <nav className="md:hidden fixed top-4 left-0 right-0 z-50 px-4">
-        <div className="relative bg-slate-900/80 backdrop-blur-2xl border border-white/10 shadow-2xl rounded-3xl">
+        <div className="relative bg-slate-900/60 backdrop-blur-2xl border border-white/10 shadow-2xl rounded-3xl">
           <div className="flex justify-between items-center px-6 py-3.5">
-            {/* Logo */}
+            {/* Logo/Name */}
             <div 
               className="flex items-center cursor-pointer" 
               onClick={() => scrollToSection('home')}
             >
+              {/* Logo placeholder - Uncomment when logo is ready
               <div className="w-10 h-10 bg-gradient-to-br from-blue-500/30 to-cyan-400/30 rounded-xl flex items-center justify-center">
-                {/* Logo placeholder */}
+                <img src="/logo.png" alt="Logo" className="w-6 h-6" />
               </div>
+              */}
+              <span 
+                className="text-sm font-bold tracking-wide text-white uppercase" 
+                style={{ fontFamily: 'Times New Roman, serif' }}
+              >
+                The Forecourt Group Ltd.
+              </span>
             </div>
 
             {/* Menu Button */}
