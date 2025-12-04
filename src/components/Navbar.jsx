@@ -79,9 +79,7 @@ export default function Navbar({ scrolled }) {
 
       {/* Mobile Navbar - Full Width with Rounded Corners */}
       <nav className="md:hidden fixed top-4 left-0 right-0 z-50 px-4">
-        <div className={`relative bg-slate-900/80 backdrop-blur-2xl border border-white/10 shadow-2xl transition-all duration-300 ${
-          mobileMenuIsOpen ? 'rounded-3xl' : 'rounded-full'
-        }`}>
+        <div className="relative bg-slate-900/80 backdrop-blur-2xl border border-white/10 shadow-2xl rounded-3xl">
           <div className="flex justify-between items-center px-6 py-3.5">
             {/* Logo */}
             <div 
@@ -104,7 +102,7 @@ export default function Navbar({ scrolled }) {
 
           {/* Mobile Menu Dropdown */}
           {mobileMenuIsOpen && (
-            <div className="px-4 pb-4 pt-2">
+            <div className="px-4 pb-4 pt-2 animate-in fade-in slide-in-from-top-2 duration-200">
               <div className="flex flex-col space-y-1">
                 {['Home', 'About', 'Services', 'Projects', 'Contact'].map((item) => (
                   <button
