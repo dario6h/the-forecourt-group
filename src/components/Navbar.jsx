@@ -48,14 +48,14 @@ export default function Navbar({ scrolled }) {
             className="flex items-center space-x-3 cursor-pointer group" 
             onClick={() => scrollToSection('home')}
           >
-            <div className="w-10 h-10 bg-gradient-to-br from-blue-500/20 to-cyan-400/20 rounded-lg flex items-center justify-center transition-transform duration-300 group-hover:scale-110">
-              {/* Empty space for logo */}
-            </div>
+            {/* <div className="w-10 h-10 bg-gradient-to-br from-blue-500/20 to-cyan-400/20 rounded-lg flex items-center justify-center transition-transform duration-300 group-hover:scale-110">
+              /// Empty space for logo ///
+            </div> */}
             <span 
               className="text-sm sm:text-base md:text-lg font-bold tracking-wide text-white uppercase hidden sm:block" 
               style={{ fontFamily: 'Times New Roman, serif' }}
             >
-              The Forecourt Group
+              The Forecourt Group Ltd.
             </span>
           </div>
 
