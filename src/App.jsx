@@ -51,7 +51,7 @@ function App() {
   }, []);
 
   return (
-    <div className="min-h-screen bg-slate-950 text-white overflow-hidden">
+    <div className="min-h-screen bg-slate-950 text-white overflow-hidden scroll-smooth">
       {/* Mouse glow effect */}
       <div
         className="fixed inset-0 pointer-events-none z-30"
@@ -69,6 +69,16 @@ function App() {
       <Footer />
 
       <style>{`
+        html {
+          scroll-behavior: smooth;
+        }
+        
+        @media (prefers-reduced-motion: reduce) {
+          html {
+            scroll-behavior: auto;
+          }
+        }
+        
         @keyframes fadeIn {
           from {
             opacity: 0;
