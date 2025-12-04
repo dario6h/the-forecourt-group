@@ -32,10 +32,16 @@ export default function Navbar({ scrolled }) {
   };
 
   return (
-    <nav className={`fixed top-6 left-1/2 transform -translate-x-1/2 z-50 transition-all duration-500 ${
-      scrolled ? 'w-11/12 max-w-5xl' : 'w-11/12 max-w-6xl'
+    <nav className={`fixed z-50 transition-all duration-500 ${
+      scrolled ? 'top-4' : 'top-6'
+    } left-0 right-0 md:left-1/2 md:transform md:-translate-x-1/2 ${
+      scrolled ? 'md:w-11/12 md:max-w-5xl' : 'md:w-11/12 md:max-w-6xl'
     }`}>
-      <div className="relative bg-slate-900/60 backdrop-blur-2xl border border-white/10 rounded-full px-8 py-2.5 shadow-2xl">
+      <div className={`relative bg-slate-900/60 backdrop-blur-2xl border shadow-2xl px-4 sm:px-8 py-3 sm:py-2.5 ${
+        mobileMenuIsOpen 
+          ? 'rounded-none border-white/10' 
+          : 'mx-2 rounded-2xl md:rounded-full border-white/10'
+      }`}>
         <div className="flex justify-between items-center">
           {/* Logo - Left Side */}
           <div 
@@ -46,7 +52,7 @@ export default function Navbar({ scrolled }) {
               {/* Empty space for logo */}
             </div>
             <span 
-              className="text-base sm:text-lg font-bold tracking-wide text-white uppercase" 
+              className="text-sm sm:text-base md:text-lg font-bold tracking-wide text-white uppercase hidden sm:block" 
               style={{ fontFamily: 'Times New Roman, serif' }}
             >
               The Forecourt Group
@@ -86,33 +92,16 @@ export default function Navbar({ scrolled }) {
 
         {/* Mobile Menu */}
         {mobileMenuIsOpen && (
-          <div className="md:hidden fixed inset-0 top-0 left-0 w-full h-screen bg-slate-950/95 backdrop-blur-xl z-50 flex flex-col">
-            {/* Header with Close Button */}
-            <div className="flex justify-between items-center px-6 py-6 border-b border-white/10">
-              <span 
-                className="text-lg font-bold tracking-wide text-white uppercase" 
-                style={{ fontFamily: 'Times New Roman, serif' }}
-              >
-                The Forecourt Group
-              </span>
-              <button
-                className="p-2 text-white hover:bg-white/10 rounded-lg transition-all duration-200"
-                onClick={() => setMobileMenuIsOpen(false)}
-              >
-                <X className="w-6 h-6" />
-              </button>
-            </div>
-
-            {/* Menu Items */}
-            <div className="flex flex-col items-center justify-center flex-1 space-y-8 px-6">
+          <div className="md:hidden mt-4 pt-4 border-t border-white/10">
+            <div className="flex flex-col space-y-1 pb-2">
               {['Home', 'About', 'Services', 'Projects', 'Contact'].map((item) => (
                 <button
                   key={item}
                   onClick={() => scrollToSection(item.toLowerCase())}
-                  className={`text-2xl font-medium transition-all duration-200 ${
+                  className={`text-left px-4 py-3 rounded-lg transition-all duration-200 ${
                     activeSection === item.toLowerCase()
-                      ? 'text-white'
-                      : 'text-gray-400 hover:text-white'
+                      ? 'text-white bg-white/10'
+                      : 'text-gray-300 hover:text-white hover:bg-white/5'
                   }`}
                 >
                   {item}
