@@ -42,14 +42,14 @@ export default function Navbar({ scrolled }) {
             className="flex items-center space-x-3 cursor-pointer group" 
             onClick={() => scrollToSection('home')}
           >
-           {/* <div className="w-10 h-10 bg-gradient-to-br from-blue-500/20 to-cyan-400/20 rounded-lg flex items-center justify-center transition-transform duration-300 group-hover:scale-110">
-              /// Empty space for logo ///
-            </div> */}
+            <div className="w-10 h-10 bg-gradient-to-br from-blue-500/20 to-cyan-400/20 rounded-lg flex items-center justify-center transition-transform duration-300 group-hover:scale-110">
+              {/* Empty space for logo */}
+            </div>
             <span 
               className="text-base sm:text-lg font-bold tracking-wide text-white uppercase" 
               style={{ fontFamily: 'Times New Roman, serif' }}
             >
-              The Forecourt Group Ltd.
+              The Forecourt Group
             </span>
           </div>
 
@@ -86,16 +86,33 @@ export default function Navbar({ scrolled }) {
 
         {/* Mobile Menu */}
         {mobileMenuIsOpen && (
-          <div className="md:hidden mt-4 pt-4 border-t border-white/10">
-            <div className="flex flex-col space-y-3">
+          <div className="md:hidden fixed inset-0 top-0 left-0 w-full h-screen bg-slate-950/95 backdrop-blur-xl z-50 flex flex-col">
+            {/* Header with Close Button */}
+            <div className="flex justify-between items-center px-6 py-6 border-b border-white/10">
+              <span 
+                className="text-lg font-bold tracking-wide text-white uppercase" 
+                style={{ fontFamily: 'Times New Roman, serif' }}
+              >
+                The Forecourt Group
+              </span>
+              <button
+                className="p-2 text-white hover:bg-white/10 rounded-lg transition-all duration-200"
+                onClick={() => setMobileMenuIsOpen(false)}
+              >
+                <X className="w-6 h-6" />
+              </button>
+            </div>
+
+            {/* Menu Items */}
+            <div className="flex flex-col items-center justify-center flex-1 space-y-8 px-6">
               {['Home', 'About', 'Services', 'Projects', 'Contact'].map((item) => (
                 <button
                   key={item}
                   onClick={() => scrollToSection(item.toLowerCase())}
-                  className={`text-left px-4 py-2 rounded-lg transition-all duration-200 ${
+                  className={`text-2xl font-medium transition-all duration-200 ${
                     activeSection === item.toLowerCase()
-                      ? 'text-white bg-white/10'
-                      : 'text-gray-300 hover:text-white hover:bg-white/5'
+                      ? 'text-white'
+                      : 'text-gray-400 hover:text-white'
                   }`}
                 >
                   {item}
