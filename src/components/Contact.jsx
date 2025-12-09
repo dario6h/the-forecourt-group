@@ -52,7 +52,7 @@ export default function Contact() {
             </a>
 
             <a 
-              href="https://wa.me/447392570952"
+              href="https://api.whatsapp.com/send?phone=447392570952"
               target="_blank"
               rel="noopener noreferrer"
               className="bg-slate-900/50 backdrop-blur-sm border border-slate-800 rounded-2xl p-6 flex items-start space-x-4 hover:border-emerald-500/50 transition-all duration-300 scroll-animate opacity-0 block"
