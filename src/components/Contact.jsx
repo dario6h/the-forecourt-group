@@ -37,7 +37,7 @@ export default function Contact() {
             </div>
 
             <a 
-              href="tel:+441383000000"
+              href="tel:+447392570952"
               className="bg-slate-900/50 backdrop-blur-sm border border-slate-800 rounded-2xl p-6 flex items-start space-x-4 hover:border-cyan-500/50 transition-all duration-300 scroll-animate opacity-0 block"
             >
               <div className="w-12 h-12 bg-cyan-500/10 rounded-lg flex items-center justify-center flex-shrink-0">
@@ -52,7 +52,7 @@ export default function Contact() {
             </a>
 
             <a 
-              href="https://wa.me/441383000000"
+              href="https://wa.me/447392570952"
               target="_blank"
               rel="noopener noreferrer"
               className="bg-slate-900/50 backdrop-blur-sm border border-slate-800 rounded-2xl p-6 flex items-start space-x-4 hover:border-emerald-500/50 transition-all duration-300 scroll-animate opacity-0 block"
@@ -89,8 +89,8 @@ export default function Contact() {
           <div className="bg-slate-900/50 backdrop-blur-sm border border-slate-800 rounded-2xl p-8 flex items-center justify-center scroll-animate opacity-0">
             <div className="text-center">
              {/* <div className="w-20 h-20 bg-gradient-to-br from-blue-500 to-cyan-400 rounded-2xl flex items-center justify-center mx-auto mb-6">
-                {/* Empty space for logo 
-              </div> */}
+                {/* Empty space for logo */}
+              {/* </div> */}
               <span 
               className="text-base sm:text-lg font-bold tracking-wide text-white uppercase" 
               style={{ fontFamily: 'Times New Roman, serif' }}
