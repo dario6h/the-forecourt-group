@@ -104,8 +104,7 @@ export default function Contact() {
                 <div className="inline-block px-6 py-3 bg-gradient-to-r from-blue-500/20 to-cyan-500/20 rounded-full border border-cyan-500/30">
                   <p className="text-cyan-400 font-semibold text-base">Available 24/7</p>
                 </div>
-                <p className="text-gray-400">We're here for you, anytime, anywhere</p>
-                <p className="text-gray-500 text-xs">Round-the-clock support at your service</p>
+                <p className="text-gray-400">We're here for you, anytime...</p>
               </div>
             </div>
           </div>
