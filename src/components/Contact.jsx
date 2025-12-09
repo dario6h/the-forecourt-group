@@ -46,7 +46,7 @@ export default function Contact() {
               <div>
                 <h3 className="font-semibold mb-2">Call Us</h3>
                 <p className="text-cyan-400 text-sm hover:text-cyan-300 transition-colors">
-                  +44 (0) 7392 570 952
+                  +44 7392 570 952
                 </p>
               </div>
             </a>
@@ -65,7 +65,7 @@ export default function Contact() {
               <div>
                 <h3 className="font-semibold mb-2">WhatsApp</h3>
                 <p className="text-emerald-400 text-sm hover:text-emerald-300 transition-colors">
-                  +44 (0) 7392 570 952
+                  +44 7392 570 952
                 </p>
               </div>
             </a>
