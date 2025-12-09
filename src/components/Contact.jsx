@@ -52,7 +52,7 @@ export default function Contact() {
             </a>
 
             <a 
-              href="https://api.whatsapp.com/send?phone=447392570952"
+              href="https://wa.me/447392570952"
               target="_blank"
               rel="noopener noreferrer"
               className="bg-slate-900/50 backdrop-blur-sm border border-slate-800 rounded-2xl p-6 flex items-start space-x-4 hover:border-emerald-500/50 transition-all duration-300 scroll-animate opacity-0 block"
@@ -100,10 +100,12 @@ export default function Contact() {
               <p className="text-gray-400 mb-6">
                 Your trusted partner for fuel retail and IT services
               </p>
-              <div className="space-y-2 text-sm text-gray-400">
-                <p>Monday - Friday: 9:00 AM - 6:00 PM</p>
-                <p>Saturday: 10:00 AM - 4:00 PM</p>
-                <p>Sunday: Closed</p>
+              <div className="space-y-3 text-sm">
+                <div className="inline-block px-6 py-3 bg-gradient-to-r from-blue-500/20 to-cyan-500/20 rounded-full border border-cyan-500/30">
+                  <p className="text-cyan-400 font-semibold text-base">Available 24/7</p>
+                </div>
+                <p className="text-gray-400">We're here for you, anytime, anywhere</p>
+                <p className="text-gray-500 text-xs">Round-the-clock support at your service</p>
               </div>
             </div>
           </div>
