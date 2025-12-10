@@ -47,7 +47,7 @@ export default function Navbar({ scrolled }) {
               <img 
                 src="/tfg-logo.png" 
                 alt="TFG Logo" 
-                className="h-12 w-auto"
+                className="h-20 w-auto object-contain"
               />
             </div>
 
@@ -88,7 +88,7 @@ export default function Navbar({ scrolled }) {
               <img 
                 src="/tfg-logo.png" 
                 alt="TFG Logo" 
-                className="h-10 w-auto"
+                className="h-14 w-auto object-contain"
               />
             </div>
 
