@@ -26,103 +26,85 @@ export default function Navbar({ scrolled }) {
   const scrollToSection = (sectionId) => {
     const element = document.getElementById(sectionId);
     if (element) {
-      element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      element.scrollIntoView({ behavior: 'smooth' });
     }
     setMobileMenuIsOpen(false);
   };
 
   return (
-    <>
-      {/* Desktop & Tablet Navbar - Capsule */}
-      <nav className={`hidden md:block fixed top-6 left-1/2 transform -translate-x-1/2 z-50 transition-all duration-500 ${
-        scrolled ? 'w-11/12 max-w-5xl' : 'w-11/12 max-w-6xl'
-      }`}>
-        <div className="relative bg-slate-900/60 backdrop-blur-2xl border border-white/10 rounded-full px-8 py-2.5 shadow-2xl">
-          <div className="flex justify-between items-center">
-            {/* Logo - Left Side */}
-            <div 
-              className="flex items-center space-x-3 cursor-pointer group" 
-              onClick={() => scrollToSection('home')}
+    <nav className={`fixed top-6 left-1/2 transform -translate-x-1/2 z-50 transition-all duration-500 ${
+      scrolled ? 'w-11/12 max-w-5xl' : 'w-11/12 max-w-6xl'
+    }`}>
+      <div className="relative bg-slate-900/60 backdrop-blur-2xl border border-white/10 rounded-full px-8 py-2.5 shadow-2xl">
+        <div className="flex justify-between items-center">
+          {/* Logo - Left Side */}
+          <div 
+            className="flex items-center space-x-3 cursor-pointer group" 
+            onClick={() => scrollToSection('home')}
+          >
+           {/* <div className="w-10 h-10 bg-gradient-to-br from-blue-500/20 to-cyan-400/20 rounded-lg flex items-center justify-center transition-transform duration-300 group-hover:scale-110">
+              /// Empty space for logo ///
+            </div> */}
+            <span 
+              className="text-base sm:text-lg font-bold tracking-wide text-white uppercase" 
+              style={{ fontFamily: 'Times New Roman, serif' }}
             >
-              <img 
-                src="/tfg-logo.png" 
-                alt="TFG Logo" 
-                className="h-20 w-auto object-contain"
-              />
-            </div>
+              The Forecourt Group Ltd.
+            </span>
+          </div>
 
-            {/* Nav Links - Right Side */}
-            <div className="flex items-center space-x-8">
+          {/* Nav Links - Right Side */}
+          <div className="hidden md:flex items-center space-x-8">
+            {['Home', 'About', 'Services', 'Projects', 'Contact'].map((item) => (
+              <button
+                key={item}
+                onClick={() => scrollToSection(item.toLowerCase())}
+                className="relative text-sm font-medium text-gray-300 hover:text-white transition-colors duration-300 py-2 group"
+              >
+                <span className="relative z-10">{item}</span>
+                
+                {/* Animated underline */}
+                <span 
+                  className={`absolute bottom-0 left-0 h-0.5 bg-gradient-to-r from-blue-400 to-cyan-400 transition-all duration-300 ${
+                    activeSection === item.toLowerCase() 
+                      ? 'w-full' 
+                      : 'w-0 group-hover:w-full'
+                  }`}
+                />
+              </button>
+            ))}
+          </div>
+
+          {/* Mobile Menu Button */}
+          <button
+            className="md:hidden p-2 text-white hover:bg-white/10 rounded-lg transition-all duration-200"
+            onClick={() => setMobileMenuIsOpen(!mobileMenuIsOpen)}
+          >
+            {mobileMenuIsOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+          </button>
+        </div>
+
+        {/* Mobile Menu */}
+        {mobileMenuIsOpen && (
+          <div className="md:hidden mt-4 pt-4 border-t border-white/10">
+            <div className="flex flex-col space-y-3">
               {['Home', 'About', 'Services', 'Projects', 'Contact'].map((item) => (
                 <button
                   key={item}
                   onClick={() => scrollToSection(item.toLowerCase())}
-                  className="relative text-sm font-medium text-gray-300 hover:text-white transition-colors duration-300 py-2 group"
+                  className={`text-left px-4 py-2 rounded-lg transition-all duration-200 ${
+                    activeSection === item.toLowerCase()
+                      ? 'text-white bg-white/10'
+                      : 'text-gray-300 hover:text-white hover:bg-white/5'
+                  }`}
                 >
-                  <span className="relative z-10">{item}</span>
-                  
-                  {/* Animated underline */}
-                  <span 
-                    className={`absolute bottom-0 left-0 h-0.5 bg-gradient-to-r from-blue-400 to-cyan-400 transition-all duration-300 ${
-                      activeSection === item.toLowerCase() 
-                        ? 'w-full' 
-                        : 'w-0 group-hover:w-full'
-                    }`}
-                  />
+                  {item}
                 </button>
               ))}
             </div>
           </div>
-        </div>
-      </nav>
-
-      {/* Mobile Navbar - Full Width with Rounded Corners */}
-      <nav className="md:hidden fixed top-4 left-0 right-0 z-50 px-4">
-        <div className="relative bg-slate-900/60 backdrop-blur-2xl border border-white/10 shadow-2xl rounded-3xl">
-          <div className="flex justify-between items-center px-6 py-3.5">
-            {/* Logo/Name */}
-            <div 
-              className="flex items-center cursor-pointer" 
-              onClick={() => scrollToSection('home')}
-            >
-              <img 
-                src="/tfg-logo.png" 
-                alt="TFG Logo" 
-                className="h-14 w-auto object-contain"
-              />
-            </div>
-
-            {/* Menu Button */}
-            <button
-              className="p-2 text-white hover:bg-white/10 rounded-lg transition-all duration-200"
-              onClick={() => setMobileMenuIsOpen(!mobileMenuIsOpen)}
-            >
-              {mobileMenuIsOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
-            </button>
-          </div>
-
-          {/* Mobile Menu Dropdown */}
-          {mobileMenuIsOpen && (
-            <div className="px-4 pb-4 pt-2 animate-in fade-in slide-in-from-top-2 duration-200">
-              <div className="flex flex-col space-y-1">
-                {['Home', 'About', 'Services', 'Projects', 'Contact'].map((item) => (
-                  <button
-                    key={item}
-                    onClick={() => scrollToSection(item.toLowerCase())}
-                    className={`text-left px-4 py-3 rounded-xl transition-all duration-200 font-medium ${
-                      activeSection === item.toLowerCase()
-                        ? 'text-white bg-blue-500/20'
-                        : 'text-gray-300 hover:text-white hover:bg-white/10'
-                    }`}
-                  >
-                    {item}
-                  </button>
-                ))}
-              </div>
-            </div>
-          )}
-        </div>
-      </nav>
-    </>
+        )}
+      </div>
+    </nav>
   );
 }
