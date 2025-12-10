@@ -44,12 +44,11 @@ export default function Navbar({ scrolled }) {
               className="flex items-center space-x-3 cursor-pointer group" 
               onClick={() => scrollToSection('home')}
             >
-              <span 
-                className="text-lg font-bold tracking-wide text-white uppercase" 
-                style={{ fontFamily: 'Times New Roman, serif' }}
-              >
-                The Forecourt Group Ltd.
-              </span>
+              <img 
+                src="/tfg-logo.png" 
+                alt="TFG Logo" 
+                className="h-8 w-auto"
+              />
             </div>
 
             {/* Nav Links - Right Side */}
@@ -86,17 +85,11 @@ export default function Navbar({ scrolled }) {
               className="flex items-center cursor-pointer" 
               onClick={() => scrollToSection('home')}
             >
-              {/* Logo placeholder - Uncomment when logo is ready
-              <div className="w-10 h-10 bg-gradient-to-br from-blue-500/30 to-cyan-400/30 rounded-xl flex items-center justify-center">
-                <img src="/logo.png" alt="Logo" className="w-6 h-6" />
-              </div>
-              */}
-              <span 
-                className="text-sm font-bold tracking-wide text-white uppercase" 
-                style={{ fontFamily: 'Times New Roman, serif' }}
-              >
-                The Forecourt Group Ltd.
-              </span>
+              <img 
+                src="/tfg-logo.png" 
+                alt="TFG Logo" 
+                className="h-8 w-auto"
+              />
             </div>
 
             {/* Menu Button */}
