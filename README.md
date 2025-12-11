@@ -1,18 +1,30 @@
-# React + Vite
+# The Forecourt Group Ltd – Next.js
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Marketing site for The Forecourt Group Ltd rebuilt with Next.js (App Router) for better SEO, performance, and Vercel hosting.
 
-Currently, two official plugins are available:
+## Getting started
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+1) Install dependencies  
+```bash
+npm install
+```  
+If PowerShell blocks npm, run from a shell with script execution enabled or use `powershell -ExecutionPolicy Bypass -Command "npm install"`.
 
-## React Compiler
+2) Run the dev server  
+```bash
+npm run dev
+```  
+The site is available at http://localhost:3000.
 
-The React Compiler is enabled on this template. See [this documentation](https://react.dev/learn/react-compiler) for more information.
+3) Production build  
+```bash
+npm run build
+npm start
+```
 
-Note: This will impact Vite dev & build performances.
-
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## Features
+- App Router with clean, file-based routing and metadata
+- SEO: canonical URLs, Open Graph/Twitter tags, robots.txt, sitemap, and JSON-LD
+- Tailwind CSS for responsive, mobile-first layout
+- Intersection-based animations and smooth scrolling with reduced-motion fallback
+- Ready for Vercel deployment and custom domain mapping
